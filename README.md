@@ -6,7 +6,7 @@ Small command-line app that processes flow log record files described in https:/
 
 
 ## Execute the application:
-### Option1: With wrapper gradle task 
+### Option 1: With wrapper gradle task 
 ```
 ./gradlew bootRun --args="<mappgins_file> <flow_log_file> <output_file>"
 ```
@@ -16,7 +16,7 @@ Example:
 ./gradlew bootRun --args="/Users/russell/Workspace/tag_mappings.csv /Users/russell/Workspace/flow_log_big.txt /Users/russell/Workspace/output.txt"
 ```
 
-### Option2: Using a generated executable jar
+### Option 2: Using a generated executable jar
 **Generate an executable jar file:**
 ```shell
 ./gradlew bootjar
