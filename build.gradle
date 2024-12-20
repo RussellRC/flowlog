@@ -1,0 +1,43 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.0'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.russell'
+version = '0.0.1'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+
+	//Logging
+	implementation 'ch.qos.logback:logback-classic'
+
+	// javax.annotation.Nonnull annotation
+	implementation 'com.google.code.findbugs:jsr305:3.0.2'
+	annotationProcessor 'com.google.code.findbugs:jsr305:3.0.2'
+
+	implementation 'javax.inject:javax.inject:1'
+
+	implementation 'com.google.guava:guava:33.4.0-jre'
+
+	// Testing
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mockito:mockito-core:5.+'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+	jvmArgs "-javaagent:${configurations.testRuntimeClasspath.find { it.name.contains('mockito-core') }.absolutePath}"
+}
