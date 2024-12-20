@@ -1,0 +1,12 @@
+Tag Counts:
+Tag,Count
+tag1,10
+tag2,20
+Untagged,5
+
+Port/Protocol Combination Counts:
+Port,Protocol,Count
+6,tcp,66
+6,udp,666
+7,udp,77
+8,icmp,88
